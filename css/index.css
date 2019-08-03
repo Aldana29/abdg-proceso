@@ -1,0 +1,777 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --celeste: #00B3F0;
+    --rosa: #EE3D96;
+    --violeta: #5C2D91;
+    --blanco: #FFFFFF;
+    --negro: #333333;
+    --gris: #9D9FA2;
+    --grisopacidad: #9d9fa2a1;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*
+--------------------------------------------
+ABRE NAVBAR
+-------------------------------------------
+*/
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 1%;
+    box-shadow: 0 1px 5px 0px var(--gris);
+    width: 100%;
+    margin: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+
+.logo {
+    display: inline-block;
+}
+
+
+nav {
+    height: 100%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+}
+
+
+.nav-lista {
+    list-style: none;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+}
+
+
+.nav-lista a {
+    padding-left: 5px;
+    padding-top: 3px;
+    padding-right: 15px;
+    text-decoration: none;
+    display: block;
+    color: var(--negro);
+    position: relative;
+    font-size: 16px;
+
+}
+
+
+.nav-lista li::before {
+    content: "";
+    display: block;
+    width: 23px;
+    transform-origin: left;
+    transform: scale(1);
+    height: 23px;
+    background-color: var(--celeste);
+    border-radius: 50%;
+    position: absolute;
+}
+
+
+.nav-lista li:hover::before {
+    animation-name: agrandar;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+
+@keyframes agrandar {
+    0% {
+        transform: scale(1);
+        background-color: var(--celeste);
+    }
+
+    50% {
+        transform: scale(2);
+        background-color: var(--rosa);
+    }
+
+    100% {
+        transform: scale(1);
+        background-color: var(--rosa);
+    }
+}
+
+/*
+-----------------------------------------------------------------
+QUERIES NAV
+-----------------------------------------------------------------
+ */
+
+@media (max-width: 1200px) {
+    .nav-lista {
+        width: 85%;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .nav-lista {
+        width: 85%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+
+    header {
+
+        height: 15vh;
+    }
+
+    .hamburguesa {
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 30%;
+        transform: translate(-50%, 0);
+        z-index: 1;
+    }
+
+    .linea {
+        width: 30px;
+        height: 3px;
+        background: var(--violeta);
+        margin: 5px;
+
+    }
+
+    nav li {
+        position: relative;
+    }
+
+    .nav-lista a {
+        color: var(--blanco);
+    }
+
+
+
+    .nav-lista {
+        background: var(--rosa);
+        height: 100vh;
+        width: 75%;
+        flex-direction: column;
+        clip-path: circle(0px at top right);
+        /* clip-path: circle(1000px at 100px 0px);  */
+        transition: all 1s ease-out;
+        position: absolute;
+        top: 0;
+        right: 0;
+        box-shadow: 0px 0px 5px 0px var(--gris);
+    }
+
+    .nav-lista.open {
+        clip-path: circle(1000px at top right);
+    }
+
+    .nav-lista li::before {
+        display: none;
+    }
+
+    .nav-lista li a:hover {
+        color: var(--violeta);
+    }
+
+    nav img {
+        width: 100%;
+    }
+
+    nav .logo {
+        width: 60px;
+        min-height: 51px;
+        padding-top: 6px;
+
+    }
+
+}
+
+/*
+--------------------------------------------
+CIERRA NAVBAR
+-------------------------------------------
+*/
+
+
+/*
+--------------------------------------------
+ABRE HOLA
+-------------------------------------------
+*/
+
+.hola {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    margin-bottom: 4%;
+}
+
+
+h1 {
+    font-size: 100px;
+    font-weight: 900;
+    line-height: 90px;
+    color: var(--rosa);
+    margin-bottom: 2%;
+}
+
+
+.somos-ab {
+    color: var(--celeste);
+}
+
+
+.texto {
+    width: 60%;
+}
+
+
+.negrita {
+    font-weight: 700;
+}
+
+
+.texto p {
+    font-size: 20px;
+}
+
+
+.texto p {
+    padding-top: 2%;
+    align-items: center;
+}
+
+
+.chancho-hola {
+    width: 550px;
+    height: 400px;
+
+}
+
+
+.chancho-hola img {
+    width: 100%;
+}
+
+/*
+----------------------------
+QUERIES HOLA
+----------------------------
+*/
+@media (max-width: 1200px) {
+    .texto h1 {
+        font-size: 80px;
+        line-height: 80px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .texto h1 {
+        font-size: 65px;
+        line-height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .texto h1 {
+        font-size: 60px;
+        margin-bottom: 2%;
+        line-height: 60px;
+    }
+
+    .chancho-hola {
+        display: none;
+    }
+
+    .hola {
+        width: 100%;
+    }
+
+    .texto {
+        width: 90%;
+        margin: auto;
+    }
+
+
+
+    .texto p {
+        text-align: justify;
+        padding-top: 0;
+    }
+
+    .enter {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .texto h1 {
+        font-size: 60px;
+        margin-bottom: 3%;
+        line-height: 60px;
+    }
+
+    .enter {
+        display: none;
+    }
+
+    .texto p {
+        font-size: 16.5px;
+    }
+}
+
+
+
+/*
+--------------------------------------------
+CIERRA HOLA
+-------------------------------------------
+*/
+
+
+
+/*
+--------------------------------------------
+ABRE NOSOTRAS
+-------------------------------------------
+*/
+
+
+.nosotras {
+    width: 100%;
+    background-color: var(--rosa);
+    height: auto;
+    padding-bottom: 3%;
+}
+
+.integrantes-nosotras {
+    display: flex;
+    width: 58%;
+    margin: auto;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+h2 {
+    font-size: 50px;
+    text-align: center;
+    color: var(--blanco);
+    padding: 3%;
+}
+
+.foto {
+    margin-bottom: 4%;
+}
+
+.foto img {
+    width: 100%;
+}
+
+.aldana {
+    width: 45%;
+}
+
+.belen {
+    width: 45%;
+}
+
+h3 {
+    color: var(--blanco);
+    font-size: 25px;
+}
+
+.puesto-nosotras {
+    color: var(--blanco);
+    padding-bottom: 2%;
+    border-bottom: 1px solid var(--blanco);
+    font-weight: 400;
+}
+
+.bajada-nosotras {
+    color: var(--blanco);
+    padding-top: 4%;
+}
+
+
+/*
+----------------------------
+QUERIES NOSOTRAS
+----------------------------
+*/
+
+@media (max-width: 1024px) {
+
+    .integrantes-nosotras {
+        display: flex;
+        width: 85%;
+        margin: auto;
+        justify-content: space-between;
+        padding-bottom: 2%;
+
+    }
+
+    .aldana {
+        width: 48%;
+    }
+
+    .belen {
+        width: 48%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .bajada-nosotras {
+        display: none;
+    }
+
+    .nosotras {
+        height: auto;
+        padding-bottom: 2%;
+    }
+
+    .puesto-nosotras {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .nosotras {
+        /* padding-bottom: 0.5%; */
+    }
+
+    .nosotras h2 {
+        font-size: 35px;
+
+    }
+
+    .aldana {
+        width: 100%;
+        margin-bottom: 6%;
+    }
+
+    .belen {
+        width: 100%;
+    }
+
+    .integrantes-nosotras {
+        flex-direction: column;
+    }
+
+
+
+}
+
+/*
+--------------------------------------------
+CIERRA NOSOTRAS
+-------------------------------------------
+*/
+
+/*
+--------------------------------------------
+ABRE QUE HACEMOS
+-------------------------------------------
+*/
+
+.violeta {
+    color: var(--violeta);
+}
+
+ul {
+    list-style: none;
+}
+
+.contenedor {
+    width: 85%;
+    background-color: var(--blanco);
+    margin: auto;
+    margin-bottom: 4%;
+}
+
+.servicios-padre {
+    z-index: -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+}
+
+.servicios-hijo {
+    background-color: var(--blanco);
+    border: 2px solid var(--celeste);
+    background-size: 100%;
+    transition: transform 0.5s;
+    position: relative;
+    padding: 5%;
+    height: 100%;
+}
+
+.servicios-hijo:hover {
+    transform: translate(-10px, -10px);
+}
+
+.servicios-textos {
+    float: right;
+    padding: 5%;
+    width: 70%;
+    padding-top: 0;
+}
+
+.subtitulo-servicio {
+    color: var(--violeta);
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.lista-servicios {
+    display: block;
+    padding-bottom: 5%;
+    padding-top: 2%;
+}
+
+.icono {
+    float: left;
+    height: 100px;
+    margin: auto;
+    width:30%;
+    padding-left: 20px;
+
+}
+
+.icono img {
+    width: 100%;
+}
+
+.contenedor-servicios {
+    /* background-image: url("rayasdiagonalescyan.png"); */
+    background: repeating-linear-gradient(-45deg, var(--celeste), var(--celeste) 3px, var(--blanco) 3px, var(--blanco) 8px);
+    border: 2px solid var(--celeste);
+}
+
+.boton-violeta {
+    color: var(--blanco);
+    background-color: var(--violeta);
+    border-color: var(--violeta);
+    margin: auto;
+    display: block;
+    padding: 3%;
+    width: 45%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+
+.boton-violeta a {
+    color: var(--blanco);
+}
+
+.boton-violeta:hover {
+    cursor: pointer;
+    background-color: var(--blanco);
+    color: var(--violeta);
+    border: 2px solid var(--violeta);
+}
+
+.boton-violeta:hover a {
+    color: var(--violeta);
+
+}
+
+
+/*
+---------------------------------------------
+QUERIES QUE HACEMOS
+--------------------------------------------
+*/
+
+@media (max-width: 1200px) {
+    .servicios-padre {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .servicios-padre {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 15px;
+    }
+
+    .servicios-hijo:hover {
+        transform: none;
+    }
+
+    .subtitulo-servicio {
+       font-size: 30px;
+    }
+
+    .lista-servicios {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lista-servicios {
+        display: none;
+    }
+
+    .icono {
+        display: block;
+        float: none;
+        padding-left: 0;
+        margin-bottom: 4%;
+    }
+
+    .icono img {
+        width: 100%;
+    }
+
+    .servicios-textos {
+        width:100%;
+        text-align: center;
+    }
+
+    .violeta {
+        font-size: 41px;
+    }
+   }
+
+/*
+--------------------------------------------
+CIERRA QUE HACEMOS
+-------------------------------------------
+*/
+
+/*
+--------------------------------------------
+ABRE HERRAMIENTAS
+-------------------------------------------
+*/
+
+.contenedor-herramientas {
+    width: 100%;
+    padding-bottom: 1%;
+    background-color: var(--violeta);
+}
+
+.herramientas-caja {
+    position: relative;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: auto;
+    background-color: var(--violeta);
+    margin-bottom: 2%;
+}
+
+.herramienta {
+    position: relative;
+    width: 65%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.barra {
+    width: 100%;
+    height: 25px;
+    border-radius: 10px;
+    border: 2px solid var(--blanco);
+    line-height: 22px;
+    overflow: hidden;
+}
+
+.porcentaje {
+    text-align: right;
+    color: var(--blanco);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1px;
+    padding-right: 10px;
+    border-right: 2px solid #fff;
+    animation: progreso 0.5s linear infinite;
+    animation-iteration-count: 1;
+    background: linear-gradient(45deg, var(--celeste) 25%, var(--blanco) 25%, var(--blanco) 50%, var(--celeste) 50%, var(--celeste) 75%, var(--blanco) 75%, var(--blanco));
+    background-size: 30px 30px;
+    transition: transform 3s ease;
+}
+
+
+@keyframes progreso {
+    0% {
+        background-position: 0 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        background-position: 30px 0;
+        transform: translateX(0%);
+    }
+}
+
+.porcentaje-herramienta {
+    font-size: 22px;
+    color: var(--blanco);
+    
+
+}
+
+.mierda {
+    width: 50%;
+
+}
+
+/*
+---------------------------------------------
+QUERIES HERRAMIENTAS
+--------------------------------------------
+*/
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+/*
+--------------------------------------------
+CIERRA HERRAMIENTAS
+-------------------------------------------
+*/
