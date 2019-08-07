@@ -10,11 +10,10 @@ x.addEventListener(
 
             var projects = respuesta.projects;
 
-
-            for (let i = 0; i < projects.length; i++) {
+            for (let i = 0; i < 3; i++) {
                 
-                var ultimos = i -4;
-                console.log(projects[ultimos]);
+                // var ultimos = i -4;
+                console.log(projects[i]);
             }
 
             // var behanceContainer2 = respuesta.projects[5].name;
