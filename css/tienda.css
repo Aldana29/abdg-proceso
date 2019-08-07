@@ -1,0 +1,614 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+:root {
+    --celeste: #00B3F0;
+    --rosa: #EE3D96;
+    --violeta: #5C2D91;
+    --blanco: #FFFFFF;
+    --negro: #333333;
+    --gris: #9D9FA2;
+    --grisopacidad: #9d9fa2a1;
+    --grisclaro: #ddd;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/*
+--------------------------------------------
+ABRE NAVBAR
+-------------------------------------------
+*/
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 1%;
+    box-shadow: 0 1px 5px 0px var(--gris);
+    width: 100%;
+    margin: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+
+.logo {
+    display: inline-block;
+}
+
+
+nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+}
+
+
+.nav-lista {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+}
+
+
+.nav-lista a {
+    padding-left: 5px;
+    padding-top: 3px;
+    padding-right: 15px;
+    text-decoration: none;
+    display: block;
+    color: var(--negro);
+    position: relative;
+    font-size: 16px;
+}
+
+
+.nav-lista li::before {
+    content: "";
+    display: block;
+    width: 23px;
+    transform-origin: left;
+    transform: scale(1);
+    height: 23px;
+    background-color: var(--celeste);
+    border-radius: 50%;
+    position: absolute;
+}
+
+
+.nav-lista li:hover::before {
+    animation-name: agrandar;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+
+@keyframes agrandar {
+    0% {
+        transform: scale(1);
+        background-color: var(--celeste);
+    }
+
+    50% {
+        transform: scale(2);
+        background-color: var(--rosa);
+    }
+
+    100% {
+        transform: scale(1);
+        background-color: var(--rosa);
+    }
+}
+
+/*
+-----------------------------------------------------------------
+QUERIES NAV
+-----------------------------------------------------------------
+*/
+
+@media (max-width: 1200px) {
+    .nav-lista {
+        width: 85%;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .nav-lista {
+        width: 85%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    header {
+        height: 15vh;
+    }
+
+    .hamburguesa {
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 30%;
+        transform: translate(-50%, 0);
+        z-index: 1;
+    }
+
+    .lineah {
+        width: 30px;
+        height: 3px;
+        background: var(--violeta);
+        margin: 5px;
+    }
+
+    nav li {
+        position: relative;
+    }
+
+    .nav-lista a {
+        color: var(--blanco);
+    }
+
+    .nav-lista {
+        background: var(--rosa);
+        height: 100vh;
+        width: 75%;
+        flex-direction: column;
+        clip-path: circle(0px at top right);
+        /* clip-path: circle(1000px at 100px 0px);  */
+        transition: all 1s ease-out;
+        position: absolute;
+        top: 0;
+        right: 0;
+        box-shadow: 0px 0px 5px 0px var(--gris);
+    }
+
+    .nav-lista.open {
+        clip-path: circle(1000px at top right);
+    }
+
+    .nav-lista li::before {
+        display: none;
+    }
+
+    .nav-lista li a:hover {
+        color: var(--violeta);
+    }
+
+    nav img {
+        width: 100%;
+    }
+
+    nav .logo {
+        width: 60px;
+        min-height: 51px;
+        padding-top: 6px;
+    }
+
+}
+
+
+@media (max-width:480px){
+    header {
+        height: 15vh;
+    }
+}
+
+@media (max-width:425px){
+    header {
+        height: 13vh;
+    }
+}
+
+
+@media (max-width: 375px) {
+    .nav-lista {
+        padding-top: 12%;
+    }
+
+    header {
+        height: 13vh;
+    }
+}
+
+@media (max-width:320px){
+    header {
+        height: 12vh;
+    }
+}
+
+/*
+--------------------------------------------
+CIERRA NAVBAR
+-------------------------------------------
+*/
+
+.productotienda {
+    display: flex;
+    width: 85%;
+    margin: auto;
+    margin-top: 2%;
+}
+
+.producto-foto {
+    width: 60%;
+    margin-right: 3%;
+}
+
+.titulotienda {
+    color: var(--blanco);
+    background-color: var(--celeste);
+    width: 85%;
+    margin: auto;
+    margin-top: 2%;
+    padding: 0.7%;
+    display: flex;
+}
+
+.titulotienda h1 {
+    width: 98%;
+}
+
+.iconotienda {
+    color: var(--violeta);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+
+
+/*
+--------------------------------------------
+ABRE CAJAFOTO
+-------------------------------------------
+*/
+
+.cajafoto {
+    width: 100%;
+    height: 100%;;
+    overflow: hidden;
+    padding-bottom: 2%;
+
+}
+
+.cajafoto img {
+    width: 100%;
+}
+
+/*
+--------------------------------------------
+ABRE CAJAFOTO
+-------------------------------------------
+*/
+
+/*
+--------------------------------------------
+ABRE ACORDION
+-------------------------------------------
+*/
+
+.aside-acordeon {
+    width: 40%;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+}
+
+.container h2 {
+    margin-bottom: 2%;
+}
+
+button.acordeon-boton {
+    width: 100%;
+    background-color: var(--violeta);
+    border: none;
+    outline: none;
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 18px;
+    color: var(--blanco);
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+}
+
+button.acordeon-boton:after {
+    content: '\f055';
+    font-family: "fontawesome";
+    font-size: 14px;
+    float: right;
+}
+
+button.acordeon-boton.is-open:after {
+    content: '\f056';
+}
+
+button.acordeon-boton:hover,
+button.acordeon-boton.is-open {
+    background-color: var(--blanco);
+    color: var(--violeta);
+    border: 1px solid var(--violeta);
+}
+
+.acordeon-contenido {
+    background-color: var(--blanco);
+    border-left: 1px solid var(--violeta);
+    border-right: 1px solid var(--violeta);
+    border-bottom: 1px solid var(--violeta);
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+}
+
+.acordeon-contenido p{
+padding: 2%;
+}
+
+
+/*
+--------------------------------------------
+CIERRA ACORDION
+-------------------------------------------
+*/
+
+/*
+--------------------------------------------
+BOTON COMPRAR
+--------------------------------------------
+*/
+
+.comprar {
+    color: var(--blanco);
+    background-color: var(--celeste);
+    padding: 2%;
+    border: 0;
+    font-weight: 700;
+    margin-top:2%;
+    margin-bottom:4%;
+    font-size: 16px;
+    cursor: pointer;
+    width: 50%;
+    /* margin-left: 25%; */
+}
+
+.comprar:hover {
+    color: var(--celeste);
+    border: 1px solid var(--celeste);
+    background-color: var(--blanco);
+}
+
+/*
+--------------------------------------------
+ABRE IMPORTANTE
+-------------------------------------------
+*/
+
+.tienda-importante {
+    width: 100%;
+    border: 0.5px solid var(--rosa);
+    padding: 3%;
+
+}
+
+.tienda-importante-titulo {
+    width: 100%;
+    margin: auto;
+    color: var(--rosa);
+    font-weight: 700;
+    /* padding-bottom: 0.5%; */
+}
+
+.tienda-importante ul {
+    font-size: 13px;
+    text-align: justify;
+}
+
+.tienda-importante ul li {
+    border-bottom: 1px solid var(--rosa);
+    padding-bottom: 1.5%;
+    padding-top: 1.5%;
+}
+
+.tienda-importante ul li:last-child {
+    border-bottom: none;
+}
+
+
+/*
+--------------------------------------------
+CIERRA IMPORTANTE
+-------------------------------------------
+*/
+
+/*
+-----------------------------------------------------------------
+QUERIES TIENDA
+-----------------------------------------------------------------
+*/
+
+@media (max-width: 1280px) {
+    .container h2{
+        font-size: 23px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .container h2{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .titulotienda {
+        width: 100%;
+        padding: 2%;
+    }
+
+    .titulotienda h1 {
+        padding-left: 6%;
+        width: 88%;
+    }
+
+    .container h2{
+        font-size: 26px;
+    }
+
+    .productotienda {
+        width: 100%;
+        display: inline-block;
+    }
+
+    .producto-foto{
+        width: 85%;
+        margin: auto;
+    }
+
+    .aside-acordeon {
+        width: 85%;
+        margin: auto;
+    }
+
+    .container h2{
+        margin-bottom: 1%;
+    }
+
+
+
+}
+
+@media (max-width: 425px) {
+    .titulotienda h1 {
+        padding-left: 7%;
+        width: 82%;
+    }
+
+    .container h2{
+        font-size: 20px;
+    }
+
+} 
+
+@media (max-width: 375px) {
+    .titulotienda h1 {
+        padding-left: 7%;
+        width: 82%;
+    }
+}
+
+@media (max-width: 320px){
+ 
+}
+/*
+-------------------------------------------
+COMIENZA FOOTER
+-------------------------------------------
+*/
+
+
+footer {
+    width: 100%;
+    background-color: var(--negro);
+    height: 60px;
+    color: var(--blanco);
+    margin-top: 2%;
+}
+
+.contenedor-footer {
+    display: flex;
+    width: 85%;
+    margin: auto;
+    align-items: center;
+    height: 60px;
+}
+
+
+.footer-1 {
+    width: 50%;
+    font-size: 12px;
+    padding-left: 1%;
+}
+
+.footer-1 p {
+    font-size: 13px;
+}
+
+.footer-2 {
+    width: 50%;
+    text-align: right;
+}
+
+.footer-2 p {
+    font-size: 13px;
+}
+
+/*
+------------------------------------------
+QUERIES FOOTER
+-------------------------------------------
+*/
+
+@media (max-width: 480px) {
+
+    .footer-1 {
+        padding-left: 3%;
+    }
+
+    .footer-1 p {
+        font-size: 10px;
+    }
+
+    .footer-2 p {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .contenedor-footer {
+        width: 90%;
+    }
+
+@media (max-width: 320px) {
+    .footer-1 p {
+        font-size: 8px;
+    }
+
+}
+/*
+//////////////////////////////////////////////////////
+FIN FOOTER
+//////////////////////////////////////////////////////
+*/

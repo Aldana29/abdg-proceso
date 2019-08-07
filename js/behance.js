@@ -1,23 +1,28 @@
-
 var x = new XMLHttpRequest();
 
-// readystatechange -> espera a que haya algun cambio en la solicitud
+// readystatechange
 x.addEventListener(
     "readystatechange",
     () => {
         if (x.status === 200 && x.readyState === 4) {
-
-            
             var respuesta = JSON.parse(x.response);
+            console.log(respuesta);
+
+            var projects = respuesta.projects;
 
 
+            for (let i = 0; i < projects.length; i++) {
+                
+                var ultimos = i -4;
+                console.log(projects[ultimos]);
+            }
+
+            // var behanceContainer2 = respuesta.projects[5].name;
+            // behanceContainer.innerHTML = behanceContainer2;
 
 
-            
         }
-    }
-);
+    });
 
-x.open("GET","https://www.behance.net/v2/collections/172560673/projects?api_key=Zb0XWEqAvBua4lmCbfb6derptH2tp4cc", true);
-
+x.open("GET", "https://blooming-fortress-75644.herokuapp.com", true);
 x.send();
