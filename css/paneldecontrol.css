@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+:root {
+    --celeste: #00B3F0;
+    --rosa: #EE3D96;
+    --violeta: #5C2D91;
+    --blanco: #FFFFFF;
+    --negro: #333333;
+    --gris: #9D9FA2;
+    --grisopacidad: #9d9fa2a1;
+    --grisclaro: #ddd;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
