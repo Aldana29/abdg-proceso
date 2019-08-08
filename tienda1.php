@@ -33,7 +33,7 @@
                 <li><a href="index.html#quienessomos">QUIENES SOMOS</a></li>
                 <li><a href="index.html#quehacemos">QUE HACEMOS</a></li>
                 <li><a href="galeria.html">NUESTROS TRABAJOS</a></li>
-                <li><a href="tienda1.php">TIENDA</a></li>
+                <li><a href="tienda1.html">TIENDA</a></li>
                 <li><a href="index.html#contacto">CONTACTO</a></li>
             </ul>
         </nav>
@@ -59,6 +59,93 @@
             <button class="boton" onclick="filterSelection('casamiento')"> Casamiento</button>
             <button class="boton" onclick="filterSelection('props')"> Props</button>
         </div>
+<!---------------------------------------------------------------------------------------------------------------------
+    ABRE PHP
+---------------------------------------------------------------------------------------------------------------------
+-->
+
+<?php
+
+// 1. Me conecto a la bd 
+include("conexion.php");
+
+// 2. Creo la consulta 
+$mostrar = "SELECT `nombre`, `bajada`, `precio`, `imagen` FROM `kits_imprimibles`";
+    
+
+// 3. Ejecuto 
+$mostrar_ej = mysqli_query(
+    $conexion,
+    $mostrar)
+    ;
+
+    
+
+// 4. Pregunto si NO funcionó
+ if ($mostrar_ej === false) {
+    echo "Error, ver SQL: $mostrar";
+     } else {
+        //   echo "Vas bien";
+       
+    echo '<div class="contenedor-galeria">';
+
+     while(
+         $producto=mysqli_fetch_array($mostrar_ej)
+     ) {
+
+        ?>
+         
+        <div>
+        <!-- <img class="foto1" src="img/kits/aviador1.jpeg"> -->
+        <img class="cuadrado-galeria-foto" src="imagenproducto/<?php echo $producto['imagen'];?>" alt="">
+        
+
+        <?php
+         echo '<div class="titulo-galeria-tienda"';
+
+        //  echo '<div class="titulo-galeria-tienda"';
+         echo '<p>';
+         echo $producto['nombre'];
+         echo '</p>';
+         echo '</div>';
+
+
+
+         echo '<div class="descripcion-galeria-tienda"';
+         echo '<p>';
+         echo $producto['bajada'];
+         echo '</p>';
+         
+         echo '</div>';?>
+
+        <div class="pie-galeria-tienda">
+        <button class="boton-comprar"> <a href="tienda.html">COMPRAR</a></button>
+
+        <?php
+        echo '<div class="precio"';
+        echo '<p>';
+        ?> AR $ <?php
+        echo $producto['precio'];
+        echo '</p>';
+        echo '</div>';?>
+        </div>
+        </div>
+
+    <?php
+        } //cierra while
+      
+     } //cierra else
+
+?>
+      
+    
+
+
+<!---------------------------------------------------------------------------------------------------------------------
+    CIERRA PHP
+---------------------------------------------------------------------------------------------------------------------
+-->
+
 
         <div class="contenedor-galeria">
 
@@ -66,7 +153,7 @@
             <div class="filtro cumpleanios cuadrado-galeria-tienda">
                 <div>
 
-                    <a class=" cuadrado-galeria-foto ">
+                    <a class="cuadrado-galeria-foto">
                         <img class="foto1" src="img/kits/aviador1.jpeg">
                         <img class="foto2" src="img/kits/aviador2.jpeg">
                     </a>
@@ -79,7 +166,7 @@
                         <p>Candy bar</p>
                     </div>
 
-                    <div class="pie-galeria-tienda">
+                    <div class="['nombre'];">
                         <button class="boton-comprar"> <a href="tienda.html">COMPRAR</a></button>
                         <p class="precio">AR $50</p>
                     </div>

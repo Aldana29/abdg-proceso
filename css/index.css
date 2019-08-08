@@ -15,7 +15,7 @@ a {
     --blanco: #FFFFFF;
     --negro: #333333;
     --gris: #9D9FA2;
-    --grisopacidad: #9d9fa2a1;
+    --grisclaro: #ddd;
 }
 
 html {
@@ -436,11 +436,23 @@ h2 {
 
 .foto {
     margin-bottom: 4%;
-}
+    width: 100%;
+    height: auto;
+ }
 
 .foto img {
     width: 100%;
 }
+
+.foto:hover img{
+    display: none;
+}
+
+.foto:hover .b{
+    display: inline-block;
+}
+
+
 
 .aldana {
     width: 45%;
@@ -465,6 +477,14 @@ h3 {
 .bajada-nosotras {
     color: var(--blanco);
     padding-top: 4%;
+}
+
+.b {
+    display:none;
+}
+
+.c {
+    display: none;
 }
 
 
@@ -528,6 +548,16 @@ QUERIES NOSOTRAS
     .integrantes-nosotras {
         flex-direction: column;
     }
+
+    .foto:hover .b{
+        display: none;
+    }
+
+    .foto:hover .c{
+        display: inline-block;
+    }
+
+
 }
 
 @media (max-width: 425px) {
@@ -960,6 +990,7 @@ textarea {
     width: 100%;
     margin: auto;
     background-image: url("../img/fondocontacto.png");
+    background-color: rgb(255, 213, 220);
     background-size: cover;
     height: 100%;
     background-attachment: fixed;
@@ -1122,6 +1153,7 @@ QUERIES CONTACTO
 
     .contenedor-contacto {
         background-image: none;
+        background-color: var(--blanco);
     }
 
     .titulo-formulario p {
@@ -1176,6 +1208,12 @@ QUERIES CONTACTO
     .ubicacion {
         display: none;
     }
+
+    .icono-contacto:hover img{
+        opacity: 0.8;
+        cursor: pointer;
+    }
+    
 }
 
 @media (max-width: 480px) {
@@ -1262,13 +1300,173 @@ CIERRA CONTACTO
 ABRE BEHANCE
 -------------------------------------------
 */
-
-.behance-general {
+.contenedor-behance {
     width: 85%;
     margin: auto;
-    padding-top: 2%;
-    display: flex;
 }
+
+
+.behance-trabajos {
+    width: 65%;
+    margin: auto;
+    display: flex;
+    align-content: space-between;
+    padding-bottom: 4%;
+}
+
+.cont-trabajo{
+width: 100%;
+text-align: center;
+}
+
+#trabajo1titulo{
+    font-size: 20px;
+    margin-bottom: 3%;
+    color: var(--rosa);
+}
+
+#trabajo2titulo{
+    font-size: 20px;
+    margin-bottom: 3%;
+    color: var(--rosa);
+}
+
+#trabajo3titulo{
+    font-size: 20px;
+    margin-bottom: 3%;
+    color: var(--rosa);
+}
+
+#trabajo1foto {
+    margin-bottom: 2%;
+}
+
+#trabajo2foto {
+    margin-bottom: 2%;
+}
+
+#trabajo3foto {
+    margin-bottom: 2%;
+} 
+
+#trabajo1link{
+    width: 79%;
+    background-color: var(--celeste);
+    text-transform: uppercase;
+    margin: auto;
+    padding: 10px 0;
+}
+
+#trabajo1link:hover{
+    opacity: 0.5;
+}
+
+#trabajo2link:hover{
+    opacity: 0.5;
+}
+
+#trabajo3link:hover{
+    opacity: 0.5;
+}
+#trabajo1link a {
+    color: var(--blanco);
+}
+
+#trabajo2link{
+    width: 79%;
+    background-color: var(--celeste);
+    text-transform: uppercase;
+    margin: auto;
+    padding: 10px 0;
+}
+
+#trabajo2link a {
+    color: var(--blanco);
+}
+
+
+#trabajo3link{
+    width: 79%;
+    background-color: var(--celeste);
+    text-transform: uppercase;
+    margin: auto;
+    padding: 10px 0;
+}
+
+#trabajo3link a {
+    color: var(--blanco);
+}
+
+/*
+--------------------------------------------
+QUERIES BEHANCE
+-------------------------------------------
+*/
+
+
+@media (max-width:1440px){
+    .behance-trabajos {
+        width:73%;
+    }
+}
+
+@media (max-width:1280px){
+    .behance-trabajos {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contenedor-behance{
+        width: 100%;
+    }
+
+    .behance-trabajos {
+        width:87%;
+    }
+
+}
+
+@media (max-width: 768px){
+    .behance-trabajos {
+    width:100%;
+    }
+
+    .cont-trabajo {
+        width: 50%;
+        margin: auto;
+        margin-bottom: 4%;
+    }
+}
+
+@media (max-width: 480px){
+    .behance-trabajos {
+        flex: none;
+        display: block;
+        }
+
+        .cont-trabajo {
+            width: 100%;
+            margin-bottom: 7%;
+        }
+
+        .titulos-celeste{
+            font-size: 41px;
+        }
+
+        #trabajo1link {
+            width: 48%;
+        }
+
+        #trabajo2link {
+            width: 48%;
+        }
+
+        #trabajo3link {
+            width: 48%;
+        }
+}
+
 
 /*
 --------------------------------------------
