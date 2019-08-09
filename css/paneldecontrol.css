@@ -29,4 +29,28 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
+
+}
+
+.contenedor-panel{
+    width:75%;
+    margin: auto;
+   }
+
+.contenedor-productos {
+    width: 75%;
+    margin: auto;
+    display: grid;
+	grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px;
+    margin-top:3%;
+}
+
+.listado-productos{
+    width:350px;
+    height: auto;
+}
+
+.listado-productos img{
+    width: 100%;
 }

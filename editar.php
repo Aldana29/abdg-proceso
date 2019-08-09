@@ -8,6 +8,8 @@ $id = $_GET['id'];
 echo "Este es el producto N°$id";
 
 
+
+
 ?>
 
 <form action="upload.php" method="post" enctype="multipart/form-data">  

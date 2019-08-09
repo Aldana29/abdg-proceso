@@ -193,7 +193,7 @@ QUERIES NAV
     }
 
     .nav-lista.open {
-        clip-path: circle(1000px at top right);
+        clip-path: circle(1500px at top right);
     }
 
     .nav-lista li::before {

@@ -3,9 +3,9 @@
 
 $conexion = mysqli_connect(
     'localhost',
-    'root',
-    '',
-    'abdg',
+    'id10394411_abdgestudio',
+    'ABBT1234',
+    'id10394411_abdg'
 );
 
 
